@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breast Cancer Detector</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='research.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Breast Cancer Detection</h1>
+      <h3>Upload a Mammogram OR Enter 30 Features</h3>
+
+      {% if error %}
+      <p style="color: red">{{ error }}</p>
+      {% endif %} {% if prediction %}
+      <p style="color: green; font-size: 1.2em">
+        <strong>🩺 Result: {{ prediction }}</strong>
+      </p>
+      {% endif %} {% if img_path %}
+      <img
+        src="{{ url_for('static', filename='uploads/' + img_path.split('/')[-1]) }}"
+        alt="Uploaded Image"
+        width="300"
+      />
+      {% endif %}
+
+      <form action="/detect" method="POST" enctype="multipart/form-data">
+        <label>Select Image:</label>
+        <input type="file" name="file" accept="image/*" /><br /><br />
+
+        <label>Or Enter 30 Features (comma-separated):</label>
+        <textarea
+          name="symptoms"
+          rows="5"
+          placeholder="e.g. 14.2, 20.4, 90.2, ..."
+        ></textarea
+        ><br /><br />
+
+        <button type="submit">Detect</button>
+      </form>
+    </div>
+  </body>
+</html>
