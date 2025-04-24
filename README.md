@@ -7,5 +7,9 @@ an Artificial Intelligent that is used to detect either a patient has Breast Can
 - Or give input of numarical  data that contains 30 features like (perimeter,radious mean etc.)
 
 ## Librariries
-- Simage
+- Skimage
 - Scikit-learn
+- Scipy
+- Open CV
+- Numpy
+- Pandas
