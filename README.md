@@ -2,7 +2,7 @@
 # Onco Check 
 an Artificial Intelligent that is used to detect either a patient is   **malignant(M)**  or  **benign(B)** based on an input image of cell nuclei or numerical Dataset. Here use a trained Random Forest classifier for the prediction.
 
-#### B= Not canourous
+#### B= Not cancourous
 #### M = canourous
 
 ## features
